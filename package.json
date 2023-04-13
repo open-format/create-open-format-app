@@ -1,0 +1,14 @@
+{
+  "name": "create-open-format-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "OpenFormat Dev <dev@openformat.tech>",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^5.2.0",
+    "commander": "^10.0.0",
+    "download-git-repo": "^3.0.2",
+    "ora": "^6.3.0",
+    "which-pm": "^2.0.0"
+  }
+}
