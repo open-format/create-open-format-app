@@ -1,14 +1,52 @@
 {
   "name": "create-open-format-app",
-  "version": "1.0.0",
-  "main": "index.js",
+  "version": "0.0.0",
+  "description": "Create OPENFORMAT apps with one command",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/open-format/create-open-format-app"
+  },
+  "keywords": [
+    "open-format",
+    "openformat",
+    "ethereum",
+    "react",
+    "next",
+    "next.js"
+  ],
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "bin": {
+    "create-open-format-app": "./dist/index.js"
+  },
+  "scripts": {
+    "dev": "ncc build ./index.ts -w -o dist/",
+    "build": "ncc build ./index.ts -o ./dist/ --minify --no-cache --no-source-map-register",
+    "version:dev": "yarn changeset version --snapshot dev",
+    "release:dev": "yarn changeset publish --tag dev --no-git-tag",
+    "release": "yarn changeset publish"
+  },
   "author": "OpenFormat Dev <dev@openformat.tech>",
   "license": "MIT",
   "dependencies": {
+    "@changesets/cli": "^2.26.1",
     "chalk": "^5.2.0",
     "commander": "^10.0.0",
     "download-git-repo": "^3.0.2",
+    "fs-extra": "^11.1.1",
     "ora": "^6.3.0",
+    "prompts": "^2.4.2",
     "which-pm": "^2.0.0"
+  },
+  "devDependencies": {
+    "@changesets/changelog-github": "^0.4.8",
+    "@types/fs-extra": "^11.0.1",
+    "@types/node": "^18.15.11",
+    "@types/prompts": "^2.4.4",
+    "@types/which": "^3.0.0",
+    "@vercel/ncc": "^0.36.1",
+    "typescript": "^5.0.4"
   }
 }
