@@ -1,5 +1,11 @@
 # create-open-format-app
 
+## 0.1.3
+
+### Patch Changes
+
+- [`e16c075`](https://github.com/open-format/create-open-format-app/commit/e16c075df1c26fb98ccc7f934170560e4f33aa7a) Thanks [@tinypell3ts](https://github.com/tinypell3ts)! - Get program version from packageJson
+
 ## 0.1.0
 
 ### Minor Changes
