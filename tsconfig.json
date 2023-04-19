@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
-    "typeRoots": ["./node_modules/@types", "@types"],
-    "target": "es2019",
+    "module": "es2020",
     "moduleResolution": "node",
+    "target": "es2020",
+    "esModuleInterop": true,
+    "typeRoots": ["./node_modules/@types", "@types"],
     "strict": true,
     "resolveJsonModule": true,
-    "esModuleInterop": true,
     "skipLibCheck": false
   },
   "exclude": ["node_modules", "dist", "helpers/index.ts"],
