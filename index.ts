@@ -1,9 +1,6 @@
 #!/usr/bin/env node
-
 import chalk from "chalk";
-
 import { Command } from "commander";
-
 import fs from "fs/promises";
 import ora from "ora";
 import {
@@ -13,9 +10,10 @@ import {
   getPackageManager,
   runCommand,
 } from "./helpers/index.js";
+import packageJson from "./package.json";
 
 const program = new Command();
-program.version("1.0.0");
+program.version(packageJson.version);
 
 program
   .argument(
