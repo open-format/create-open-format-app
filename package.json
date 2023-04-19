@@ -6,6 +6,11 @@
     "type": "git",
     "url": "https://github.com/open-format/create-open-format-app"
   },
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "OpenFormat Dev <dev@openformat.tech>",
+  "license": "MIT",
   "keywords": [
     "open-format",
     "openformat",
@@ -29,8 +34,6 @@
     "version": "yarn changeset version",
     "release": "yarn changeset publish"
   },
-  "author": "OpenFormat Dev <dev@openformat.tech>",
-  "license": "MIT",
   "dependencies": {
     "@changesets/cli": "^2.26.1",
     "chalk": "^5.2.0",
