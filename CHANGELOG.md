@@ -1,5 +1,11 @@
 # create-open-format-app
 
+## 0.1.4
+
+### Patch Changes
+
+- [`574b396`](https://github.com/open-format/create-open-format-app/commit/574b396f2bc8299afec4bb223fe1ee7e5462fce6) Thanks [@tinypell3ts](https://github.com/tinypell3ts)! - IIFE
+
 ## 0.1.3
 
 ### Patch Changes
