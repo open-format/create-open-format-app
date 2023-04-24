@@ -36,7 +36,7 @@ export function downloadTemplate(
 ) {
   return new Promise((resolve, reject) => {
     download(
-      `open-format/dapp-template#${template}`,
+      `open-format/hello-world#${template}`,
       projectName,
       { clone: true },
       (error: any) => {
