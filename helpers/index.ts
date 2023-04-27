@@ -6,10 +6,9 @@ import fs from "fs-extra";
 import path from "path";
 import prompts from "prompts";
 import which from "which";
+import { exec } from "child_process";
 
-export function getPackageManager(options: {
-  [key: string]: string;
-}) {
+export function getPackageManager(options: { [key: string]: string }) {
   if (
     options.packageManager &&
     ["npm", "yarn", "pnpm"].includes(options.packageManager)
@@ -24,38 +23,32 @@ export function getPackageManager(options: {
         // Ignore the error and try the next package manager
       }
     }
-    throw new Error(
-      "No supported package manager found (npm, yarn, or pnpm)."
-    );
+    throw new Error("No supported package manager found (npm, yarn, or pnpm).");
   }
 }
 
 export function downloadTemplate(
   projectName: string,
   template: string
-) {
+): Promise<boolean> {
   return new Promise((resolve, reject) => {
-    download(
-      `open-format/hello-world#${template}`,
-      projectName,
-      { clone: true },
-      (error: any) => {
-        if (error) {
-          reject(error);
-        } else {
-          resolve(true);
-        }
+    const gitCommand = `git clone -b ${template} https://github.com/open-format/hello-world.git ${projectName}`;
+    exec(gitCommand, (error: Error | null, stdout: string, stderr: string) => {
+      if (error) {
+        console.error("Error details:", error);
+        console.error("Git command output:", stderr);
+        reject(error);
+      } else {
+        console.log("Git command output:", stdout);
+        resolve(true);
       }
-    );
+    });
   });
 }
 
 export async function copyEnvFile(projectName: string) {
   const envPath = path.resolve(projectName, ".env.local");
-  const envTemplatePath = path.resolve(
-    projectName,
-    ".env.local.example"
-  );
+  const envTemplatePath = path.resolve(projectName, ".env.local.example");
 
   const envVars: Record<string, string> = {};
   const envExists = await fs.pathExists(envPath);
