@@ -8,17 +8,19 @@ import prompts from "prompts";
 import which from "which";
 import { exec } from "child_process";
 
-export function getPackageManager(options: { [key: string]: string }) {
+export async function getPackageManager(options: {
+  [key: string]: string;
+}): Promise<string> {
   if (
     options.packageManager &&
     ["npm", "yarn", "pnpm"].includes(options.packageManager)
   ) {
-    return options.packageManager;
+    return which.sync(options.packageManager);
   } else {
     for (const pm of ["yarn", "pnpm", "npm"]) {
       try {
-        which.sync(pm);
-        return pm;
+        const packageManagerPath = which.sync(pm);
+        return packageManagerPath;
       } catch (error) {
         // Ignore the error and try the next package manager
       }
