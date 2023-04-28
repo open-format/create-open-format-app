@@ -1,7 +1,6 @@
 import chalk from "chalk";
 import { SpawnOptions, spawn } from "child_process";
 //@ts-ignore
-import download from "download-git-repo";
 import fs from "fs-extra";
 import path from "path";
 import prompts from "prompts";
