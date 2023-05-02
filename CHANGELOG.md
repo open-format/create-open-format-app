@@ -1,5 +1,15 @@
 # create-open-format-app
 
+## 1.0.0
+
+### Major Changes
+
+- [#1](https://github.com/open-format/create-open-format-app/pull/1) [`f9d10ad`](https://github.com/open-format/create-open-format-app/commit/f9d10addd839ed61b5b656c4ff6b3bc179e24012) Thanks [@3rdBlock](https://github.com/3rdBlock)! - First Release 🚀
+
+### Patch Changes
+
+- [`8900205`](https://github.com/open-format/create-open-format-app/commit/89002052dc5d22244e278ed8444d5f328a4df7ce) Thanks [@tinypell3ts](https://github.com/tinypell3ts)! - Change download template repo name
+
 ## 0.1.4
 
 ### Patch Changes
