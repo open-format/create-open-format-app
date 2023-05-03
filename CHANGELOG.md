@@ -1,5 +1,11 @@
 # create-open-format-app
 
+## 1.1.0
+
+### Minor Changes
+
+- e9b3459: Fix for windows terminal
+
 ## 1.0.0
 
 ### Major Changes
