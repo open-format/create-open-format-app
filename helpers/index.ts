@@ -18,7 +18,7 @@ export async function getPackageManager(options: {
   } else {
     for (const pm of ["yarn", "pnpm", "npm"]) {
       try {
-        const packageManagerPath = which.sync(pm);
+        const packageManagerPath = path.basename(which.sync(pm));
         return packageManagerPath;
       } catch (error) {
         // Ignore the error and try the next package manager
@@ -40,7 +40,6 @@ export function downloadTemplate(
         console.error("Git command output:", stderr);
         reject(error);
       } else {
-        console.log("Git command output:", stdout);
         resolve(true);
       }
     });
